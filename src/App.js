@@ -5,25 +5,32 @@ import './App.css';
 
 class App extends Component {
 
-  clickHandler(msg) {
-    alert(msg+" Clicked" );
+  constructor(){
+    super();
+    this.state = {
+      subscribersListToShow: []
+    }
   }
 
+  // clickHandler(msg) {
+  //   alert(msg+" Clicked" );
+  // }
+
   render() {
-    let subscribers=[
-      {
-        id:1,
-        name:'savin',
-        number:'888888'
-      },
+    // let subscribers=[
+    // //   {
+    // //     id:1,
+    // //     name:'savin',
+    // //     number:'888888'
+    // //   },
 
-      {
-        id:2,
-        name:'suhani',
-        number:'999999'
-      }
+    // //   {
+    // //     id:2,
+    // //     name:'suhani',
+    // //     number:'999999'
+    // //   }
 
-    ]
+    // // ]
     return (
       <div className="component-container">
         <Header heading="Phone Directory"/>
@@ -36,7 +43,7 @@ class App extends Component {
           </div>
 
         {
-          subscribers.map(subs=> {
+          this.state.subscribersListToShow.map(subs=> {
                 return <div key={subs.id} className="grid-container">
                 <span className="grid-item">{subs.name}</span>
                 <span className="grid-item">{subs.number}</span>
