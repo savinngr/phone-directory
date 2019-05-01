@@ -1,36 +1,16 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import './App.css';
+import './ShowSubscribers.css';
 
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
-  constructor(){
-    super();
-    this.state = {
-      subscribersListToShow: []
-    }
-  }
 
-  // clickHandler(msg) {
-  //   alert(msg+" Clicked" );
-  // }
+  clickHandler(msg) {
+     alert(msg+" Clicked" );
+   }
 
   render() {
-    // let subscribers=[
-    // //   {
-    // //     id:1,
-    // //     name:'savin',
-    // //     number:'888888'
-    // //   },
-
-    // //   {
-    // //     id:2,
-    // //     name:'suhani',
-    // //     number:'999999'
-    // //   }
-
-    // // ]
     return (
       <div className="component-container">
         <Header heading="Phone Directory"/>
@@ -43,10 +23,10 @@ class App extends Component {
           </div>
 
         {
-          this.state.subscribersListToShow.map(subs=> {
+          this.props.subscriberList.map(subs=> {
                 return <div key={subs.id} className="grid-container">
                 <span className="grid-item">{subs.name}</span>
-                <span className="grid-item">{subs.number}</span>
+                <span className="grid-item">{subs.number}</span>  
                 <span className="grid-item action-btn-container">
                   <button className="custom-btn delete-btn" onClick={this.clickHandler.bind(this,subs.name)}> Delete </button>
                 </span>
@@ -60,5 +40,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;
 

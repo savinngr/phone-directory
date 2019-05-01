@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import ShowSubscribers from './ShowSubscribers';
 import AddSubscriber from './AddSubscriber';
+import PhoneSubscriber from './PhoneDirectory'
 import * as serviceWorker from './serviceWorker';
 import './common/common.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<PhoneSubscriber />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
